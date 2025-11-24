@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Maker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 Prompt Maker</h1>
+    
+    <!-- API 키 설정 섹션 -->
+    <div class="api-key-section">
+      <input type="password" id="apiKey" placeholder="Claude API 키를 입력하세요">
+      <button id="saveApiKey" class="btn-save">저장</button>
+    </div>
+
+    <!-- 입력 섹션 -->
+    <div class="input-section">
+      <label for="userInput">단어/키워드를 입력하세요:</label>
+      <textarea id="userInput" placeholder="예: 마케팅 이메일, 친근한 톤, 제품 홍보" rows="3"></textarea>
+      <button id="analyzeBtn" class="btn-primary">분석하기</button>
+    </div>
+
+    <!-- 로딩 표시 -->
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Claude가 분석 중입니다...</p>
+    </div>
+
+    <!-- 프롬프트 요소 섹션 -->
+    <div id="promptElements" class="prompt-elements hidden">
+      
+      <!-- Persona -->
+      <div class="element-group">
+        <h3>🎭 Persona</h3>
+        <div id="personaOptions" class="options-container"></div>
+      </div>
+
+      <!-- Context -->
+      <div class="element-group">
+        <h3>📝 Context</h3>
+        <div id="contextOptions" class="options-container"></div>
+      </div>
+
+      <!-- Task -->
+      <div class="element-group">
+        <h3>✅ Task</h3>
+        <div id="taskOptions" class="options-container"></div>
+      </div>
+
+      <!-- Format -->
+      <div class="element-group">
+        <h3>📋 Format</h3>
+        <div id="formatOptions" class="options-container"></div>
+      </div>
+
+      <!-- Example -->
+      <div class="element-group">
+        <h3>💡 Example</h3>
+        <div id="exampleOptions" class="options-container"></div>
+      </div>
+
+      <!-- Tone -->
+      <div class="element-group">
+        <h3>🎵 Tone</h3>
+        <div id="toneOptions" class="options-container"></div>
+      </div>
+    </div>
+
+    <!-- 결과 섹션 -->
+    <div id="resultSection" class="result-section hidden">
+      <h3>생성된 프롬프트</h3>
+      <textarea id="resultText" readonly rows="10"></textarea>
+      <button id="copyBtn" class="btn-copy">📋 클립보드에 복사</button>
+      <div id="copyNotification" class="notification hidden">복사되었습니다!</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

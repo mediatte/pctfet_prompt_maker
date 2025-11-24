@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "PCTFET 프롬프트 메이커",
+  "version": "3.0.0",
+  "description": "AI 기반 지능형 프롬프트 생성기 - Claude, GPT, Gemini, Ollama 지원. 키워드만 입력하면 완벽한 프롬프트를 자동 생성합니다.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://api.anthropic.com/*"
+  ],
+  "action": {
+    "default_title": "Prompt Maker"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+
